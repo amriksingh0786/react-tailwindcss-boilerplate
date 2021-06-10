@@ -3,22 +3,34 @@ import '../styles/styles.css'
 
 function App() {
   return (
-    <div className="container">
-      <div className="flex flex-col justify-center items-center h-screen">
-        <h1 className="text-gray-700 text-5xl font-semibold">
-          <span className="bg-clip-text text-transparent bg-gradient-to-l to-blue-600 from-gray-700">
-            React
-          </span>
-          {' + '}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-700 to-teal-400">
-            TailwindCSS
-          </span>
-        </h1>
-        <span className="text-lg text-gray-600">
-          Minimal boilerplate, ready-to-use!
-        </span>
-      </div>
-    </div>
+  
+       <div class="bg-grey-700 min-h-screen flex flex-col">
+            <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+                <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+                    <h1 class="mb-8 text-3xl text-center">Sign Up</h1>
+                    <input 
+                        type="tel"
+                        class="block border border-grey-light w-full p-3 rounded mb-4"
+                        name="phonenumber"
+                        placeholder="Enter Mobile Number"
+                        />
+                    <button
+                        type="submit"
+                        class="w-full text-center py-3 rounded bg-green-400 text-black hover:bg-green-dark focus:outline-none my-1"
+                    >Send OTP</button>
+
+                </div>
+
+                <div class="text-grey-dark mt-6">
+                    Already have an account? 
+                    <a class="no-underline border-b border-blue text-blue" href="../login/">
+                        Log in
+                    </a>.
+                </div>
+            </div>
+        </div>
+  
+ 
   )
 }
 
