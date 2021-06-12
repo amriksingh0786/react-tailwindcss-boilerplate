@@ -4,10 +4,18 @@ import ReactDOM from 'react-dom'
 import App from './components/App'
 
 import * as serviceWorker from './serviceWorker'
+import { BrowserRouter, Switch, Route,Redirect } from "react-router-dom";
+import Signup from "./components/signup/signupform"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+     <BrowserRouter>
+			<Switch>
+				<Route path="/signup" exact component={Signup} />
+			</Switch>
+      <App/>
+		</BrowserRouter>
+    
   </React.StrictMode>,
   document.getElementById('root')
 )
