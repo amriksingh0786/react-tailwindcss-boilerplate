@@ -6,14 +6,17 @@ import App from './components/App'
 import * as serviceWorker from './serviceWorker'
 import { BrowserRouter, Switch, Route,Redirect } from "react-router-dom";
 import Signup from "./components/signup/signupform"
+import Welcome from "./components/welcome/WelcomeScreen"
+import ProtectedRoute from './ProtectedRoute';
 
 ReactDOM.render(
   <React.StrictMode>
      <BrowserRouter>
 			<Switch>
 				<Route path="/signup" exact component={Signup} />
+        <ProtectedRoute path="/welcome" component={Welcome}/>
+        <App/>
 			</Switch>
-      <App/>
 		</BrowserRouter>
     
   </React.StrictMode>,

@@ -18,9 +18,13 @@ function App() {
     var no = mobileNumber;
     var number = "+91" + no;
     console.log("mob", number);
+    
     firebase
       .auth()
-      .signInWithPhoneNumber(number, recaptcha)
+      .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+      .then(
+        ()=>{
+          return firebase.auth().signInWithPhoneNumber(number, recaptcha)
       .then(function (e) {
         var code = prompt("Enter the otp", "");
 
@@ -39,6 +43,10 @@ function App() {
       .catch(function (error) {
         console.error(error);
       });
+        }
+      )
+      .catch()
+      
   };
   
   return (
